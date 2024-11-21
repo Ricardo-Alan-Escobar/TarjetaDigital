@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Banner from '../images/banner.jpg'
 import Perfil from '../images/perfil.jpeg'
+import Card from '../components/Card.astro';
 ---
 
 <Layout title="¡Bienvenido!">
@@ -19,10 +20,12 @@ import Perfil from '../images/perfil.jpeg'
 		</div>
 
 		<div class="name">
-			<p>Sandra Doe</p>
-			<p>Gerente de Ventas</p>
+			<p class="nombre"><strong>Sandra jane Doe</strong></p>
+			<p class="puesto">Gerente de Ventas</p>
+			<p class="puesto">...</p>
+			<p class="puesto">¡Bienvenido !</p>
 		</div>
-
+        <Card></Card>
 	  </div>
 	</main>
   </Layout>
@@ -36,6 +39,12 @@ import Perfil from '../images/perfil.jpeg'
 		font-size: 20px;
 		line-height: 1.6;
 	}
+	.puesto{
+		font-size:medium;
+	}
+	.nombre{
+		font-size:x-large;
+	}
 	#icon2{
 		margin-left: 85px;
 	}
@@ -44,14 +53,17 @@ import Perfil from '../images/perfil.jpeg'
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		background-color: bisque;
+		
 		color: rgb(49, 46, 46);
+		margin-top: 12px;
+		margin-bottom: 20px;
 		
 	}
 	.name p {
-		 margin: 0; 
-		 
-		 }
+		 margin: 0;
+		  padding: 1.5px; 
+		  line-height: 1; 
+		}
 
 	.container {
 	  height: 500px;
@@ -59,6 +71,7 @@ import Perfil from '../images/perfil.jpeg'
 	  display: flex;
 	  flex-direction: column;
 	  border-radius: 8px;
+	  color: rgb(49, 46, 46);
 	}
 	.icon{
 		display: flex;

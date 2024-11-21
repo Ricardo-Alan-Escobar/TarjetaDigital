@@ -1,61 +1,79 @@
----
-interface Props {
-	title: string;
-	body: string;
-	href: string;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab Component</title>
+    <style>
+        /* Estilos básicos */
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .tab-button {
+            background: none;
+            border: none;
+            padding: 15px 30px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #555;
+            transition: background-color 0.3s, color 0.3s;
+            flex: 1;
+        }
+        .tab-button:hover {
+            background-color: #f5f5f5;
+        }
+        .tab-button.active {
+            color: #2196F3;
+            border-bottom: 2px solid #2196F3;
+            font-weight: bold;
+        }
+        .tab-content {
+            padding: 20px;
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="tab-container">
+        <!-- Botones de pestañas -->
+        <div class="tabs">
+            <button class="tab-button active" data-tab="tab1">Option 1</button>
+            <button class="tab-button" data-tab="tab2">Option 2</button>
+        </div>
+        <!-- Contenido de pestañas -->
+        <div class="tab-content active" id="tab1">
+            <p>Content for Option 1</p>
+        </div>
+        <div class="tab-content" id="tab2">
+            <p>Content for Option 2</p>
+        </div>
+    </div>
 
-const { href, title, body } = Astro.props;
----
+    <script>
+        // Ejecutar después de que el DOM esté cargado
+        document.addEventListener('DOMContentLoaded', () => {
+            const buttons = document.querySelectorAll('.tab-button');
+            const contents = document.querySelectorAll('.tab-content');
 
-<li class="link-card">
-	<a href={href}>
-		<h2>
-			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
-			{body}
-		</p>
-	</a>
-</li>
-<style>
-	.link-card {
-		list-style: none;
-		display: flex;
-		padding: 1px;
-		background-color: #23262d;
-		background-image: none;
-		background-size: 400%;
-		border-radius: 7px;
-		background-position: 100%;
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-	}
-	.link-card > a {
-		width: 100%;
-		text-decoration: none;
-		line-height: 1.4;
-		padding: calc(1.5rem - 1px);
-		border-radius: 8px;
-		color: white;
-		background-color: #23262d;
-		opacity: 0.8;
-	}
-	h2 {
-		margin: 0;
-		font-size: 1.25rem;
-		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-	}
-	p {
-		margin-top: 0.5rem;
-		margin-bottom: 0;
-	}
-	.link-card:is(:hover, :focus-within) {
-		background-position: 0;
-		background-image: var(--accent-gradient);
-	}
-	.link-card:is(:hover, :focus-within) h2 {
-		color: rgb(var(--accent-light));
-	}
-</style>
+            // Asignar eventos a cada botón
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const tabId = button.getAttribute('data-tab');
+
+                    // Eliminar la clase "active" de todos los botones y pestañas
+                    buttons.forEach(btn => btn.classList.remove('active'));
+                    contents.forEach(content => content.classList.remove('active'));
+
+                    // Agregar la clase "active" al botón y contenido seleccionados
+                    button.classList.add('active');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
