@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tab Component</title>
     <style>
-        /* Estilos básicos */
         .tabs {
             display: flex;
             border-bottom: 1px solid #e0e0e0;
@@ -24,8 +23,8 @@
             background-color: #f5f5f5;
         }
         .tab-button.active {
-            color: #2196F3;
-            border-bottom: 2px solid #2196F3;
+            color: brown;
+            border-bottom: 2px solid brown;
             font-weight: bold;
         }
         .tab-content {
@@ -34,6 +33,20 @@
         }
         .tab-content.active {
             display: block;
+        }
+        #tab1{
+            font-size: medium;
+        }
+        .card1{
+            border: 1px solid rgb(222, 189, 189);
+            border-radius: 6px;
+            padding: 13px;
+            box-shadow: 1px 1px 3px rgb(212, 212, 212);
+            margin-bottom: 15px;
+        }
+        #icon1{
+            padding-right: 35px;
+            padding-left: 15px;
         }
     </style>
 </head>
@@ -46,7 +59,18 @@
         </div>
         <!-- Contenido de pestañas -->
         <div class="tab-content active" id="tab1">
-            <p>Content for Option 1</p>
+            <div class="card1"> 
+                <i class="fa-solid fa-mobile-screen" id="icon1"></i> +55 444 333 4321
+            </div>
+            <div class="card1"> 
+                <i class="fa-solid fa-mobile-screen" id="icon1"></i> +55 444 333 4321
+            </div>
+            <div class="card1"> 
+                <i class="fa-solid fa-mobile-screen " id="icon1"></i> +55 444 333 4321
+            </div>
+            <div class="card1"> 
+                <i class="fa-solid fa-mobile-screen" id="icon1"></i> +55 444 333 4321
+            </div>
         </div>
         <div class="tab-content" id="tab2">
             <p>Content for Option 2</p>
