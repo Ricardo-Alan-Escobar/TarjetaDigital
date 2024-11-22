@@ -37,6 +37,9 @@
         #tab1{
             font-size: medium;
         }
+        #tab2{
+            font-size: medium;
+        }
         .card1{
             border: 1px solid rgb(222, 189, 189);
             border-radius: 6px;
@@ -51,16 +54,32 @@
         #icon2{
             margin-right: 4px;
         }
+        .ubicacion{
+            text-align:justify;
+        }
+        .mapa {
+      margin-top: 25px;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+      position: relative;
+    }
+        .mapa iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
     </style>
 </head>
 <body>
     <div class="tab-container">
-        <!-- Botones de pestañas -->
         <div class="tabs">
             <button class="tab-button active" data-tab="tab1"><i class="fa-solid fa-user"  id="icon2"></i> Contacto</button>
             <button class="tab-button" data-tab="tab2"><i class="fa-solid fa-map-location-dot " id="icon2"></i> Ubicación</button>
         </div>
-        <!-- Contenido de pestañas -->
         <div class="tab-content active" id="tab1">
             <div class="card1"> 
                 <i class="fa-solid fa-mobile-screen" id="icon1"></i> +55 444 333 4321
@@ -71,9 +90,17 @@
             <div class="card1"> 
                 <i class="fa-solid fa-envelope" id="icon1"></i> Sandra.Ventas@Mavepo.com
             </div>
+            
         </div>
         <div class="tab-content" id="tab2">
-            <p>Content for Option 2</p>
+            <div class="ubicacion">
+                <i class="fa-solid fa-location-dot " ></i> 
+                Av. Salvador Nava Martínez 217, Capricornio, 78399 San Luis Potosí, S.L.P.
+                
+            </div>
+            <div class="mapa">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3695.493045870844!2d-100.95868302471197!3d22.14529657979843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842aa2225d703503%3A0xcea54f60895abea2!2sGRUPO%20Mavepo%2FMavesa%2C%20S.L.P.!5e0!3m2!1ses-419!2smx!4v1732294432781!5m2!1ses-419!2smx" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </div>
     </div>
 
