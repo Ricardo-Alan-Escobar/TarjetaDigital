@@ -26,7 +26,10 @@ import Card from '../components/Card.astro';
 			<p class="puesto2">¡Estoy aqui para ayudarte!</p>
 		</div>
         <Card></Card>
-	  </div>
+		<div class="contacto">
+		<a href="https://www.whatsapp.com/?lang=es_LA" class="contactame"><strong>¡Contactame!</strong></a>
+	</div>  
+	</div>
 	</main>
   </Layout>
   
@@ -42,6 +45,38 @@ import Card from '../components/Card.astro';
 	.puesto{
 		font-size: 19px;
 	}
+	.contacto{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 15px;
+		
+	}
+	.contactame {
+      display: inline-block;
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(90deg, #4CAF50, #2E7D32);
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 10px 50px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease-in-out;
+      text-align: center;
+    }
+
+    .contactame:hover {
+      background: linear-gradient(90deg, #81C784, #388E3C);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+      transform: translateY(-3px);
+    }
+
+    .contactame:active {
+      transform: translateY(0);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
 	.puesto2{
 		font-size: 15px;
 		
