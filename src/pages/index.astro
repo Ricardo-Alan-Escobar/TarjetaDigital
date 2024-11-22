@@ -3,11 +3,14 @@ import Layout from '../layouts/Layout.astro';
 import Banner from '../images/banner.jpg'
 import Perfil from '../images/perfil.jpeg'
 import Card from '../components/Card.astro';
+import Redes from '../components/Redes.astro'
+import Botones from '../components/Botones.astro'
 ---
 
 <Layout title="¡Bienvenido!">
 	
 	<main>
+		<Botones></Botones>
 	  <div class="container">
 		<div class="banner">
 		  <img src={Banner.src} alt="Banner" class="banner-image">
@@ -25,7 +28,9 @@ import Card from '../components/Card.astro';
 			<p class="puesto">...</p>
 			<p class="puesto2">¡Estoy aqui para ayudarte!</p>
 		</div>
+		<Redes></Redes>
         <Card></Card>
+		
 		<div class="contacto">
 		<a href="https://www.whatsapp.com/?lang=es_LA" class="contactame"><strong>¡Contactame!</strong></a>
 	</div>  
@@ -56,7 +61,7 @@ import Card from '../components/Card.astro';
       display: inline-block;
       border: none;
       border-radius: 8px;
-      background: linear-gradient(90deg, #4CAF50, #2E7D32);
+      background: linear-gradient(90deg, #b57070, #993434);
       color: white;
       text-decoration: none;
       font-size: 16px;
@@ -68,7 +73,7 @@ import Card from '../components/Card.astro';
     }
 
     .contactame:hover {
-      background: linear-gradient(90deg, #81C784, #388E3C);
+      background: linear-gradient(90deg, #ea6161, #388E3C);
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
       transform: translateY(-3px);
     }
