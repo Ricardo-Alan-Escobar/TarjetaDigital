@@ -40,17 +40,60 @@
         #tab2{
             font-size: medium;
         }
-        .card1{
-            border: 1px solid rgb(222, 189, 189);
-            border-radius: 6px;
-            padding: 13px;
-            box-shadow: 1px 1px 3px rgb(212, 212, 212);
-            margin-bottom: 15px;
-        }
-        #icon1{
-            padding-right: 35px;
-            padding-left: 15px;
-        }
+        .card1 {
+  display: flex;
+  align-items: center; /* Centra el contenido verticalmente */
+  justify-content: flex-start; /* Mantiene los iconos a la izquierda */
+  border: 1px solid rgb(222, 189, 189);
+  border-radius: 6px;
+  padding: 13px;
+  box-shadow: 1px 1px 3px rgb(212, 212, 212);
+  margin-bottom: 15px;
+  background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+.card1:hover {
+  transform: translateY(-5px);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+#icon1 {
+  padding-right: 20px; /* Espacio entre el icono y el texto */
+  font-size: 24px;
+  color: #69727b;
+  padding-left: 10px;
+}
+}
+.card1 a,
+.card1 span {
+  font-size: 16px;
+  color: #333;
+  text-decoration: none;
+  flex-grow: 1; 
+  text-align: justify; 
+  padding-left: 10px;
+}
+
+.card1 .contact-info {
+  margin-left: 10px;
+}
+
+.card1 a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Responsiveness */
+@media (max-width: 600px) {
+  .card1 {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  #icon1 {
+    font-size: 20px;
+  }
+}
         #icon2{
             margin-right: 4px;
         }
@@ -72,6 +115,47 @@
       height: 100%;
       border: 0;
     }
+    
+
+
+    .hours-container {
+        max-width: 500px;
+        margin: 20px auto;
+        
+      }
+
+      .hours-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      .day {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .day:last-child {
+        border-bottom: none;
+      }
+
+      .day span {
+        font-weight: bold;
+      }
+
+      .hours {
+        color: #555;
+      }
+
+      .day.open {
+        color: green;
+      }
+
+      .day.closed {
+        color: red;
+      }
     </style>
 </head>
 <body>
@@ -80,27 +164,67 @@
             <button class="tab-button active" data-tab="tab1"><i class="fa-solid fa-user"  id="icon2"></i> Contacto</button>
             <button class="tab-button" data-tab="tab2"><i class="fa-solid fa-map-location-dot " id="icon2"></i> Ubicación</button>
         </div>
+
+
         <div class="tab-content active" id="tab1">
-            <div class="card1"> 
-                <i class="fa-solid fa-mobile-screen" id="icon1"></i> +55 444 333 4321
-            </div>
-            <div class="card1"> 
-                <i class="fa-solid fa-globe" id="icon1"> </i> <a href="https://mavepo.com/">https://mavepo.com/</a>
-            </div>
-            <div class="card1"> 
-                <i class="fa-solid fa-envelope" id="icon1"></i> Sandra.Ventas@Mavepo.com
-            </div>
-            
+          <div class="card1">
+            <i class="fa-solid fa-mobile-screen" id="icon1" aria-hidden="true"></i>
+            <span class="contact-info" aria-label="Phone number">+55 444 221 6451</span>
+          </div>
+          <div class="card1">
+            <i class="fa-solid fa-globe" id="icon1" aria-hidden="true"></i>
+            <a href="https://mavepo.com/" title="Visit Mavepo website" aria-label="Mavepo Website">https://mavepo.com/</a>
+          </div>
+          <div class="card1">
+            <i class="fa-solid fa-envelope" id="icon1" aria-hidden="true"></i>
+            <span class="contact-info" aria-label="Email address">Sandra.nuncio@Mavepo.com.mx</span>
+          </div>
         </div>
+        
+
+        
         <div class="tab-content" id="tab2">
             <div class="ubicacion">
+                <h2>Encuentranos en:</h2>
                 <i class="fa-solid fa-location-dot " ></i> 
                 Av. Salvador Nava Martínez 217, Capricornio, 78399 San Luis Potosí, S.L.P.
                 
             </div>
             <div class="mapa">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3695.493045870844!2d-100.95868302471197!3d22.14529657979843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842aa2225d703503%3A0xcea54f60895abea2!2sGRUPO%20Mavepo%2FMavesa%2C%20S.L.P.!5e0!3m2!1ses-419!2smx!4v1732294432781!5m2!1ses-419!2smx" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            
             </div>
+            <div class="hours-container">
+                <h2><i class="fa-regular fa-clock"></i> Horarios de atención</h2>
+                <div class="day open">
+                  <span>Lunes</span>
+                  <span class="hours">09:00 AM - 05:00 PM</span>
+                </div>
+                <div class="day open">
+                  <span>Martes</span>
+                  <span class="hours">09:00 AM - 05:00 PM</span>
+                </div>
+                <div class="day open">
+                  <span>Miércoles</span>
+                  <span class="hours">09:00 AM - 05:00 PM</span>
+                </div>
+                <div class="day open">
+                  <span>Jueves</span>
+                  <span class="hours">09:00 AM - 05:00 PM</span>
+                </div>
+                <div class="day open">
+                  <span>Viernes</span>
+                  <span class="hours">09:00 AM - 05:00 PM</span>
+                </div>
+                <div class="day open">
+                  <span>Sábado</span>
+                  <span class="hours">09:00 AM - 02:00 PM</span>
+                </div>
+                <div class="day closed">
+                  <span>Domingo</span>
+                  <span class="hours">Cerrado</span>
+                </div>
+              </div>
         </div>
     </div>
 

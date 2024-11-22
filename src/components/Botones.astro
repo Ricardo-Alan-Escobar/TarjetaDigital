@@ -4,14 +4,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Funciones de la Página</title>
     <style>
-      
-
       .buttons {
         display: flex;
         justify-content: center;
         gap: 10px;
         margin-bottom: 10px;
-        
       }
 
       button {
@@ -55,18 +52,25 @@
       }
 
       .qr-container {
+        background-color: white;
+        border-radius: 8px;
         display: none;
         text-align: center;
         margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 15px;
       }
 
       .qr-container img {
-        width: 200px;
-        height: 200px;
+        width: 100%; 
+        max-width: 400px; 
+        height: auto; 
+        border-radius: 8px;
       }
 
       .qr-container button {
-        background-color: #ff5722;
+        color: white;
+        background-color: brown;
         margin-top: 10px;
       }
     </style>
@@ -74,16 +78,15 @@
   <body>
     <div class="buttons">
       <button class="share" id="shareBtn"><i class="fa-regular fa-share-from-square"></i> Compartir</button>
-      <button class="qr" id="qrBtn"><i class="fa-solid fa-qrcode"></i> Codigo QR</button>
+      <button class="qr" id="qrBtn"><i class="fa-solid fa-qrcode"></i> Código QR</button>
       <button class="print" id="printBtn" onclick="window.print()"><i class="fa-solid fa-print"></i> Imprimir</button>
     </div>
 
     <div class="qr-container" id="qr-container">
-      <img id="qr-code" alt="QR Code" />
+      <img id="qr-code" src="https://via.placeholder.com/200" alt="QR Code" />
       <button id="closeQR">Cerrar QR</button>
     </div>
 
-    <!-- Coloca el script al final del archivo para asegurarse de que el DOM esté completamente cargado -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         // Función para compartir la página
@@ -91,9 +94,9 @@
           sharePage();
         });
 
-        // Función para generar el QR
+        // Función para mostrar la imagen del QR
         document.getElementById("qrBtn").addEventListener("click", function () {
-          generateQR();
+          showQRImage();
         });
 
         // Función para cerrar el QR
@@ -110,36 +113,24 @@
               title: document.title,
               url: window.location.href,
             });
-           
           } catch (error) {
-            alert("Error al compartir la página: " + error.message);
+            alert("No se compartió");
           }
         } else {
           alert("La funcionalidad de compartir no está soportada en este navegador.");
         }
       }
 
-      // Función para generar el QR
-      function generateQR() {
+      // Función para mostrar la imagen del QR
+      function showQRImage() {
         const qrContainer = document.getElementById("qr-container");
-        const qrCode = document.getElementById("qr-code");
-
-        const url = window.location.href;
-
-        // Asignamos el atributo src al QR
-        qrCode.setAttribute(
-          "src",
-          `https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=${encodeURIComponent(
-            url
-          )}&choe=UTF-8`
-        );
-        qrContainer.style.display = "block";
+        qrContainer.style.display = "block"; // Muestra la sección con el QR
       }
 
       // Función para ocultar el QR
       function hideQR() {
         const qrContainer = document.getElementById("qr-container");
-        qrContainer.style.display = "none";
+        qrContainer.style.display = "none"; // Oculta la sección con el QR
       }
     </script>
   </body>
