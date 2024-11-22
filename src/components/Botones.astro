@@ -21,9 +21,9 @@ import qr from '../images/qr.png'
   cursor: pointer;
   font-size: 13px;
   display: flex;
-  align-items: center; /* Alinea verticalmente el icono y el texto */
-  justify-content: center; /* Centra el contenido */
-  gap: 10px; /* Añade espacio entre el icono y el texto */
+  align-items: center; 
+  justify-content: center; 
+  gap: 10px; 
   transition: background 0.3s ease;
 }
 
@@ -101,29 +101,26 @@ button.print:hover {
     </div>
 
     <div class="qr-container" id="qr-container">
+      
       <img id="qr-code" src={qr.src} alt="QR Code" />
       <button id="closeQR">Cerrar QR</button>
     </div>
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // Función para compartir la página
         document.getElementById("shareBtn").addEventListener("click", function () {
           sharePage();
         });
 
-        // Función para mostrar la imagen del QR
         document.getElementById("qrBtn").addEventListener("click", function () {
           showQRImage();
         });
 
-        // Función para cerrar el QR
         document.getElementById("closeQR").addEventListener("click", function () {
           hideQR();
         });
       });
 
-      // Función para compartir la página
       async function sharePage() {
         if (navigator.share) {
           try {
@@ -132,23 +129,23 @@ button.print:hover {
               url: window.location.href,
             });
           } catch (error) {
-            alert("No se compartió");
+            alert("No se compartió ");
           }
         } else {
           alert("La funcionalidad de compartir no está soportada en este navegador.");
         }
       }
 
-      // Función para mostrar la imagen del QR
+     
       function showQRImage() {
         const qrContainer = document.getElementById("qr-container");
-        qrContainer.style.display = "block"; // Muestra la sección con el QR
+        qrContainer.style.display = "block"; 
       }
 
-      // Función para ocultar el QR
+     
       function hideQR() {
         const qrContainer = document.getElementById("qr-container");
-        qrContainer.style.display = "none"; // Oculta la sección con el QR
+        qrContainer.style.display = "none"; 
       }
     </script>
   </body>
