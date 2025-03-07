@@ -27,6 +27,11 @@ import Botones from '../components/Botones.astro'
 			<p class="puesto">Gerente de Ventas</p>
 			<p class="puesto">...</p>
 			<p class="puesto2">¡Estoy aqui para ayudarte!</p>
+			
+		</div>
+		<div class="tiendaButton">
+		<a href="https://agcoparts.mx/" class="tienda"><i class="fa-solid fa-shop"></i> Tienda</a>
+		<a href="https://agcoparts.mx/productos?limit=20&sort=name+asc&category=4&page=1" class="tienda2">Explorar productos <i class="fa-solid fa-up-right-from-square"></i></a>
 		</div>
 		<Redes></Redes>
         <Card></Card>
@@ -39,6 +44,51 @@ import Botones from '../components/Botones.astro'
   </Layout>
   
   <style>
+	.tiendaButton{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		
+	}
+	.tienda{
+		text-decoration: none;
+  font-size: 14px;
+  padding: 12px 24px;
+  color: black;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  margin-right: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+	}
+	.tienda2{
+		text-decoration: none;
+		margin-left: 5px;
+  font-size: 14px;
+  padding: 12px 24px;
+  color: black;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid black;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	}
+	.tienda:hover, .tienda2:hover{
+		background: black;
+		color: white;
+	}
+
 	main {
 		margin: auto;
 		width: 700px;
